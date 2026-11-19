@@ -10,6 +10,24 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
+  vite: {
+    optimizeDeps: {
+      // Prebundle the page's dependencies together so first-load discovery does
+      // not replace the React graph while the preview is hydrating.
+      include: [
+        "@radix-ui/react-slot",
+        "@tanstack/react-query",
+        "react-icons/si",
+        "lucide-react",
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge",
+      ],
+      // Reject old optimizer URLs rather than mixing stale ReactDOM/Slot
+      // modules with the current React singleton after an optimizer refresh.
+      ignoreOutdatedRequests: false,
+    },
+  },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this

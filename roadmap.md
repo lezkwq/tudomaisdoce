@@ -1,4 +1,5 @@
 # Site Tudo Mais Doce
+- [ ] Corrigir o carregamento misto de dependências e verificar novamente a tela e o menu.
 - [x] Implementar identidade editorial e seções completas do documento.
 - [x] Incluir nove fotografias físicas e contatos contextuais.
 - [x] Validar regras, navegação, fotografias e todas as seções em desktop e celular.

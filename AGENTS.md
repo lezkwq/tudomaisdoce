@@ -34,3 +34,4 @@ use the editor.
 - Store authorized photos as physical original JPEG files in public/images with static paths; source-controlled assets keep external deployment portable.
 - Keep all visual styling in the global semantic design system and use editorial Button variants for calls to action; this preserves a consistent restrained visual language.
 - Use a duplicated CSS marquee for reviews, with no interaction pause and a static reduced-motion alternative; this provides continuous motion without a heavy carousel dependency.
+- Prebundle initial-page UI dependencies together and reject stale optimizer URLs; mixing optimizer generations can give React hooks a different dispatcher from ReactDOM during preview hydration.
