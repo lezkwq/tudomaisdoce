@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { existsSync, readFileSync } from "node:fs";
-import { business, categories, floristSchema, gallery, reviews, whatsappUrl } from "@/lib/florist";
+import { business, categories, floristSchema, gallery, whatsappUrl } from "@/lib/florist";
 
 describe("Confirmed florist details", () => {
   it("uses the confirmed WhatsApp recipient and contextual message", () => {
@@ -28,12 +28,6 @@ describe("Confirmed florist details", () => {
       else expect([...bytes.subarray(0, 3)]).toEqual([255, 216, 255]);
     }
     expect(paths.some(path => path.includes("793721934") || path.includes("hero"))).toBe(false);
-  });
-  it("contains exactly the eight authorized customer reviews", () => {
-    expect(reviews.map(review => review.name)).toEqual([
-      "Jessica Medeiros Moraes dos Santos", "Gisele Schmitt", "Caroline dos Santos",
-      "moises soares", "Eloiza Anunciacao", "Kercia Silva", "wendel lopes", "Daniel RJ",
-    ]);
   });
   it("keeps confirmed address data and omits unconfirmed opening hours and prices", () => {
     expect(floristSchema.address.streetAddress).toBe("Rua Tabatinga, 1733, Iririú");

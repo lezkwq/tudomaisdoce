@@ -57,46 +57,6 @@ export const gallery = [
   },
 ];
 
-export const reviews = [
-  {
-    name: "Jessica Medeiros Moraes dos Santos",
-    quote:
-      "Atendimento e produtos de ótima qualidade! Respondem rápido e serviço agilizado. Estão de parabéns!",
-  },
-  {
-    name: "Gisele Schmitt",
-    quote:
-      "Pedi para fazer uma cesta personalizada com o valor que eu poderia pagar e ela foi super compreensível em adaptar pra mim.",
-  },
-  {
-    name: "Caroline dos Santos",
-    quote:
-      "Tudo muito maravilhoso, desde o orçamento, aos preparativos e entrega. Tudo feito com muito cuidado, e foram muito atenciosos a todo momento.",
-  },
-  {
-    name: "moises soares",
-    quote: "Pedi 10horas da manhã. Antes de meio dia estava entregue estão de parabéns.",
-  },
-  {
-    name: "Eloiza Anunciacao",
-    quote:
-      "Ótimo atendimento, chegou tudo bem arrumadinho e pontual ao horário que marcamos. Serviço de qualidade amei",
-  },
-  {
-    name: "Kercia Silva",
-    quote:
-      "Ah eu amei o atendimento, super atenciosa. Fiz um pedido bem em cima da hora e mesmo assim fui atendido com muita atenção. Leo amou muito o presente.",
-  },
-  {
-    name: "wendel lopes",
-    quote: "Sempre muito bem atendido. Atenciosos, caprichosos e dedicados. Recomendo...",
-  },
-  {
-    name: "Daniel RJ",
-    quote: "Muito bom, com ótimos preços e atendimento excelente! Recomendo a todos.",
-  },
-];
-
 export const floristSchema = {
   "@context": "https://schema.org",
   "@type": "Florist",

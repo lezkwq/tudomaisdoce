@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, X, Star } from "lucide-react";
 import { SiInstagram, SiWhatsapp } from "react-icons/si";
 import { Button } from "@/components/ui/button";
-import { business, categories, gallery, reviews, whatsappUrl } from "@/lib/florist";
+import { business, categories, gallery, whatsappUrl } from "@/lib/florist";
 
 const navigation = [
   ["Início", "#inicio"],
@@ -49,7 +49,7 @@ export function Header() {
     return () => window.removeEventListener("keydown", escape);
   }, [open]);
   return (
-    <header className={`site-header ${scrolled || open ? "is-solid" : ""}`}>
+    <header className={`site-header ${scrolled || open ? "is-solid" : "is-over-hero"}`}>
       <div className="header-inner">
         <a
           href="#inicio"
@@ -122,18 +122,15 @@ export function Hero() {
       <div className="hero-overlay" />
       <div className="hero-inner">
         <div className="hero-copy">
-          <p className="eyebrow">Flores e presentes em Joinville</p>
-          <h1 id="hero-title">
-            Escolha o presente.
-            <br />
-            <em>A gente cuida</em>
-            <br />
-            dos detalhes.
+          <p className="hero-greeting">Bem-vinda à</p>
+          <h1 id="hero-title" className="hero-brand">
+            <span className="hero-kicker">Floricultura</span>
+            <span className="hero-name">Tudo Mais</span>
+            <span className="hero-script">doce</span>
           </h1>
-          <p className="hero-description">
-            Buquês, cestas e presentes personalizados, preparados com carinho para cada ocasião.
-          </p>
-          <WhatsAppButton hero />
+          <p className="hero-location">Joinville | Santa Catarina</p>
+          <p className="hero-description">Flores e presentes preparados com carinho.</p>
+          <WhatsAppButton hero>Fale pelo WhatsApp</WhatsAppButton>
         </div>
       </div>
     </section>
@@ -247,41 +244,6 @@ export function Shop() {
             Quero montar minha cesta
           </a>
         </Button>
-      </div>
-    </section>
-  );
-}
-
-export function Testimonials() {
-  return (
-    <section className="testimonials-section" aria-labelledby="reviews-title">
-      <div className="section-heading">
-        <p className="eyebrow">Histórias de carinho</p>
-        <h2 id="reviews-title">Quem já presenteou com a gente</h2>
-        <p>Avaliações de quem confiou no nosso cuidado.</p>
-      </div>
-      <div className="reviews-window">
-        <div className="reviews-track">
-          {[0, 1].map((copy) => (
-            <div
-              className="reviews-sequence"
-              key={copy}
-              aria-hidden={copy === 1 ? true : undefined}
-            >
-              {reviews.map((review) => (
-                <figure className="review" key={review.name}>
-                  <div className="review-stars" aria-label="5 de 5 estrelas">
-                    {Array.from({ length: 5 }, (_, i) => (
-                      <Star size={13} fill="currentColor" key={i} aria-hidden="true" />
-                    ))}
-                  </div>
-                  <blockquote>“{review.quote}”</blockquote>
-                  <figcaption>{review.name}</figcaption>
-                </figure>
-              ))}
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
@@ -435,13 +397,5 @@ export function Footer() {
         <span>Feito de flores. Feito de carinho.</span>
       </div>
     </footer>
-  );
-}
-
-export function MobileWhatsAppCTA() {
-  return (
-    <div className="mobile-whatsapp">
-      <WhatsAppButton />
-    </div>
   );
 }
