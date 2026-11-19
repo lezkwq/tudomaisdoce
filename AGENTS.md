@@ -28,3 +28,9 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Application architecture
+- Keep this institutional site as one scrolling index with named anchor sections, as explicitly requested; use reusable section components and shared business data.
+- Store authorized photos as physical original JPEG files in public/images with static paths; source-controlled assets keep external deployment portable.
+- Keep all visual styling in the global semantic design system and use editorial Button variants for calls to action; this preserves a consistent restrained visual language.
+- Use a duplicated CSS marquee for reviews, with no interaction pause and a static reduced-motion alternative; this provides continuous motion without a heavy carousel dependency.

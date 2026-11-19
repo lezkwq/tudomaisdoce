@@ -1,23 +1,58 @@
 import { createFileRoute } from "@tanstack/react-router";
+import {
+  Header,
+  Hero,
+  Credibility,
+  About,
+  Shop,
+  Testimonials,
+  HowItWorks,
+  InstagramGallery,
+  Footer,
+  MobileWhatsAppCTA,
+} from "@/components/florist-site";
+import { floristSchema } from "@/lib/florist";
 
-// The home route ships no og:image, so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "Floricultura Tudo Mais Doce | Buquês e Presentes em Joinville";
+const description =
+  "Buquês, arranjos, cestas de café da manhã e kits presente em Joinville. Atendimento pelo WhatsApp, personalização conforme seu orçamento e entrega por motoboy.";
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { property: "og:locale", content: "pt_BR" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
+    <>
+      <a className="skip-link" href="#conteudo">
+        Ir para o conteúdo
+      </a>
+      <Header />
+      <main id="conteudo">
+        <Hero />
+        <Credibility />
+        <About />
+        <Shop />
+        <Testimonials />
+        <HowItWorks />
+        <InstagramGallery />
+      </main>
+      <Footer />
+      <MobileWhatsAppCTA />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(floristSchema).replace(/</g, "\\u003c") }}
       />
-    </div>
+    </>
   );
 }
